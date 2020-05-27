@@ -64,9 +64,11 @@ public class MultiAgvExecutorTest {
     JSONObject msg = new JSONObject();
     int taskNo = 3;
     String path = "9,10,14,13";
+    JSONObject extra = new JSONObject();
+    extra.put("path", path);
     msg.put("task_no", taskNo);
     msg.put("cmd", "move");
-    msg.put("extra", path);
+    msg.put("extra", extra);
 
     sc.sendMessage(msg);
     String actionResponse = sc.receiveMessage();

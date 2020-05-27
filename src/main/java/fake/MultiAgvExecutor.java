@@ -1,5 +1,6 @@
 package fake;
 
+import com.alibaba.fastjson.JSON;
 import java.util.Arrays;
 
 /**
@@ -55,7 +56,8 @@ public class MultiAgvExecutor extends AbstractExecutor {
     return false;
   }
 
-  private void move(String path){
+  private void move(String extra){
+    String path = JSON.parseObject(extra).getString("path");
     String[] split = path.split(",");
     for (String s : split) {
       pos = Integer.parseInt(s);
