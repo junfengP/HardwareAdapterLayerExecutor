@@ -39,7 +39,7 @@ public class ArmrobotExecutorTest {
         JSONObject extra = new JSONObject();
         extra.put("from", "01");
         extra.put("to", "c1");
-        extra.put("goodsid", "001");
+        extra.put("goodsId", "001");
         extra.put("step", 1);
         message.put("extra", extra);
 

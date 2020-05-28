@@ -156,38 +156,38 @@ public class Commands {
         JSONObject jsonExtra = JsonTool.parseObject(extra);
         String from = jsonExtra.getString("from");
         String to = jsonExtra.getString("to");
-        String goodsid = jsonExtra.getString("goodsid");
+        String goodsId = jsonExtra.getString("goodsId");
         int step = jsonExtra.getIntValue("step");
         boolean argueIllegal = null == from
                 || null == to
-                || null == goodsid;
+                || null == goodsId;
         if (argueIllegal) {
             throw new IllegalArgumentException("Missing Argues.");
         }
         sleep(5000);
         if (step != 0) {
-            LoggerUtil.machine.info(String.format("Move item from %s to %s, goodsid: %s, step: %d.",
+            LoggerUtil.machine.info(String.format("Move item from %s to %s, goodsId: %s, step: %d.",
                     from,
                     to,
-                    goodsid,
+                    goodsId,
                     step));
         } else {
-            LoggerUtil.machine.info(String.format("Move item from %s to %s, goodsid: %s.",
+            LoggerUtil.machine.info(String.format("Move item from %s to %s, goodsId: %s.",
                     from,
                     to,
-                    goodsid));
+                    goodsId));
         }
         return true;
     }
 
     public static boolean check(String extra) {
         JSONObject jsonExtra = JsonTool.parseObject(extra);
-        String goodsid = jsonExtra.getString("goodsid");
-        if (null == goodsid) {
+        String goodsId = jsonExtra.getString("goodsId");
+        if (null == goodsId) {
             throw new IllegalArgumentException("Goodsid is null");
         }
         sleep(5000);
-        LoggerUtil.machine.info(String.format("Check finished, goodsid: %s", goodsid));
+        LoggerUtil.machine.info(String.format("Check finished, goodsId: %s", goodsId));
         return true;
     }
 }

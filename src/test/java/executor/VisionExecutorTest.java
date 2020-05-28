@@ -37,7 +37,7 @@ public class VisionExecutorTest {
         message.put("cmd", "process");
 
         JSONObject extra = new JSONObject();
-        extra.put("goodsid", "001");
+        extra.put("goodsId", "001");
         message.put("extra", extra);
 
         sc.sendMessage(message);
